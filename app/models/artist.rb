@@ -1,4 +1,5 @@
 require 'artist_message_pb'
+require 'artist_collection_message_pb'
 
 class Artist < ApplicationRecord
   has_many :venues
@@ -32,5 +33,27 @@ class Artist < ApplicationRecord
   def unserialize(data)
     message = ArtistMessage.decode(data)
     Artist.from_message(message)
+  end
+
+  ###
+  # Encode all models to ArtistCollectionMessage
+  # protobuf message
+  def self.serialize_all
+    message = ArtistCollectionMessage.new(
+      :artists => Artist.all.map { |a|
+        a.to_message
+      }
+    )
+    ArtistCollectionMessage.encode(message)
+  end
+
+  ###
+  # Decode a ArtistCollectionMessage protobuf
+  # to a collection of Artist models
+  def self.unserialize_all(data)
+    message = ArtistCollectionMessage.decode(data)
+    message.artists.map { |a|
+      Artist.from_message(a)
+    }
   end
 end

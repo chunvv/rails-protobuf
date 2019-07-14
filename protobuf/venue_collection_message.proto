@@ -1,0 +1,6 @@
+syntax = "proto3";
+import "venue_message.proto";
+
+message VenueCollectionMessage {
+    repeated VenueMessage artists = 1;
+}

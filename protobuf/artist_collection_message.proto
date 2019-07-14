@@ -1,0 +1,6 @@
+syntax = "proto3";
+import "artist_message.proto";
+
+message ArtistCollectionMessage {
+    repeated ArtistMessage artists = 1;
+}
