@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "artist_message.proto";
+import "location_message.proto";
+
+message VenueMessage {
+    int32 id = 1;
+    ArtistMessage artist = 2;
+    LocationMessage location = 3;
+    string venue_date = 4;
+}

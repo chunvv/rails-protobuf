@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message LocationMessage {
+    string country = 1;
+    string city = 2;
+    string place = 3;
+}
