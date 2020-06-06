@@ -53,7 +53,7 @@ GEM
     ffi (1.11.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
-    google-protobuf (3.7.1-universal-darwin)
+    google-protobuf (3.7.1)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
     listen (3.1.5)
@@ -127,7 +127,7 @@ GEM
       thread_safe (~> 0.1)
     websocket-driver (0.7.1)
       websocket-extensions (>= 0.1.0)
-    websocket-extensions (0.1.4)
+    websocket-extensions (0.1.5)
 
 PLATFORMS
   ruby
